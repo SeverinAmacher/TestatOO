@@ -14,4 +14,9 @@ public class ServiceItem extends Item {
 	public double getPrice() {
 		return price;
 	}
+	
+	@Override
+	public void print() {
+		System.out.println("Bezeichnung: " + description + " Pauschalpreis: " + price);
+	}
 }

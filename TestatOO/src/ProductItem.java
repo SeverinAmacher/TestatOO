@@ -22,7 +22,7 @@ public class ProductItem extends Item {
 	
 	@Override
 	public void print() {
-		System.out.println("Bezeichnung: " + description + " Anzahl: " + amount + " Stückpreis"
+		System.out.println("Bezeichnung: " + description + " Anzahl: " + amount + " Stückpreis: "
 				+ pricePerUnit);
 	}
 
