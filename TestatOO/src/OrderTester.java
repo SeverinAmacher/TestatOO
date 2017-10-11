@@ -7,7 +7,17 @@ public class OrderTester {
 		ProductItem item4 = createProductItem("Stromkabel", 3, 5.50);
 		ServiceItem item5 = createServcieItem("Wohnung putzen", 55);
 		
-		Order order = new Order(new Item[] {item1, item2, item3, item4, item5});
+		BundleItem item6 = createBundleItem("Ostern", 0.5);
+		BundleItem item7 = createBundleItem("Osterhase", 0.75);
+		item7.addItem(createProductItem("Schoggi", 6, 1.20));
+		item7.addItem(createServcieItem("Eier verstecken", 10));
+		item6.addItem(createProductItem("Eier", 6, 1.20));
+		item6.addItem(createServcieItem("Eier anmalen", 10));
+		ProductItem item8 = createProductItem("Samiklaus", 6, 1.20);
+		item6.addItem(item8);
+		item6.remove(item8);
+		item6.addItem(item7);
+		Order order = new Order(new Item[] {item1, item2, item3, item4, item5, item6});
 		order.printItems();		
 	}
 	
@@ -22,5 +32,11 @@ public class OrderTester {
 		ServiceItem serviceItem = new ServiceItem(description);
 		serviceItem.setPrice(price);
 		return serviceItem;
+	}
+	
+	private static BundleItem createBundleItem(String description, double discount) {
+		BundleItem item = new BundleItem(description);
+		item.setDiscount(discount);
+		return item;
 	}
 }
