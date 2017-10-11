@@ -12,5 +12,6 @@ public class Item {
 	
 	public void print() {
 		
+		System.out.println("Bezeichnung " + description);
 	}
 }
