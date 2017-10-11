@@ -1,4 +1,4 @@
 
-public class ServiceItem {
+public class ServiceItem extends Item {
 
 }
